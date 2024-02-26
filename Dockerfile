@@ -4,7 +4,7 @@ COPY package*.json ./
 COPY prisma ./prisma/
 RUN npm install
 COPY . .
-RUN npm run prisma:generate
+RUN npx prisma generate
 RUN npm run build
 EXPOSE ${APP_PORT}
 CMD [ "npm", "run", "start:prod" ]
