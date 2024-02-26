@@ -6,5 +6,5 @@ RUN npm install
 COPY . .
 RUN npm run prisma:generate
 RUN npm run build
-EXPOSE 3000
+EXPOSE ${APP_PORT}
 CMD [ "npm", "run", "start:prod" ]
