@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Job` ADD COLUMN `createdById` INTEGER NOT NULL DEFAULT 5;
+
+-- AddForeignKey
+ALTER TABLE `Job` ADD CONSTRAINT `Job_createdById_fkey` FOREIGN KEY (`createdById`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

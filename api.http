@@ -1,0 +1,55 @@
+POST http://localhost:3000/auth/signup
+Content-type: application/json
+
+{
+  "email": "teste@teste.com",
+  "password": "teste123",
+  "name": "Lucas Visentin"
+}
+###
+
+POST http://localhost:3000/auth/login
+Content-type: application/json
+
+{
+  "email": "teste@teste.com",
+  "password": "teste123"
+}
+###
+
+GET http://localhost:3000/users
+###
+
+GET http://localhost:3000/jobs
+###
+
+POST http://localhost:3000/jobs
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsInVzZXJJZCI6NSwiaWF0IjoxNzA4MDQyMTMyLCJleHAiOjE3MDgxMjg1MzJ9.MkTKaeZzBB42S60Mkp_Mlg6906tOes2Z-Az3h7uIeqg
+
+{
+  "title": "Lucas Visentin",
+"description":"<div> <div><strong>Company Description</strong></div> <div> Givebutter is the most-loved nonprofit fundraising platform, empowering millions of changemakers to raise more, pay less, and give better. Nonprofits use Givebutter to replace multiple tools so they can launch fundraisers and events, use donation forms and donor management (CRM), send emails and text blasts—all in one place. Instead of charging a traditional SaaS subscription fee, Givebutter is completely free to use with a 100% transparent tip-or-fee model. </div> <div><br /></div> <div> Givebutter has been certified as a Great Place to Work<strong>®</strong> in 2021, 2022, and 2023, and is the #1 rated nonprofit software company on G2 across multiple categories. </div> <div><br /></div> <div> Our mission is to empower the changemaker in all of us. We believe giving should be fun, so you’ll want to do it again, and we also believe that work should be fun, so that you’ll have the greatest impact. We are excited to hear from talented people who want to work with other talented people in making the world a butter place—and have fun along the way.&nbsp; </div> <div><br /></div> <div>Role Description</div> <div> As a Contract-to-Hire Marketing Designer, you'll be a visual storyteller who brings Givebutter's brand and mission to life across a variety of digital channels. You'll report to the Brand Designer and work closely with the marketing team to create stunning, impactful graphics that inspire action, drive engagement, and ultimately empower nonprofits to do more good. </div> <div><br /></div> <div> <strong><br />We want to hear from people who…</strong> </div> <ul> <li> Have a passion for balancing personality and function in their designs ✨ </li> <li>Can effectively receive, give, and act on feedback 💬</li> <li> Are excited to join a small but growing team and help shape Givebutter’s brand over time 🎨 </li> </ul> <div> <strong><br />Projects you'll be working on...</strong> </div> <ul> <li> Product marketing graphics for social, newsletter, blog articles, etc. </li> <li> Collaborating with the marketing team on paid ads to understand campaign goals and messaging, provide creative direction, and iterate on designs </li> <li>Downloadable PDFs such as guides, templates, and presentations</li> <li> Assisting the Brand Designer with web design projects and maintaining the brand design system </li> <li> Occasional print design projects like event booth/promotional materials and swag design </li> </ul> <div> <strong><br />Requirements</strong> </div> <ul> <li> A portfolio of past work demonstrating knowledge of design principles, effective layout skills, and brand expression </li> <li> 2+ years of experience designing marketing materials across platforms </li> <li>Proficiency in Adobe Creative Suite and Figma</li> <li> Excellent communication skills and ability to collaborate effectively in a cross-functional environment </li> </ul> <div> <strong><br />Bonus points if you have...</strong> </div> <ul> <li>Nonprofit and/or SaaS experience</li> <li>Experience with A/B testing creative</li> <li>Web design skills or familiarity with Webflow</li> <li>Motion design skills</li> </ul> <div> <strong><br />About Contract-to-Hire</strong> </div> <ul> <li> This role is a 3-month contract position with 15-20 hours per week and the potential to transition to a full-time role </li> <li> This is a remote role open to candidates outside the U.S., however, U.S. working hours are preferred </li> </ul> <div>$40 - $60 an hour</div> <div>15-20 hours/week</div> </div>",
+  "categoryId": 1,
+  "company": "Google"
+}
+###
+
+POST http://localhost:3000/categories
+Content-type: application/json
+
+{
+  "name": "Category 1"
+}
+###
+
+GET http://localhost:3000/categories
+###
+
+POST http://localhost:3000/auth/login
+Content-type: application/json
+
+{
+  "email": "lvise.batista@gmail.com",
+  "password": "test123123"
+}
