@@ -40,14 +40,6 @@ export class JobApplicationsService {
       where: {
         userId
       },
-      include: {
-        job: {
-          include: {
-            category: true
-          }
-        },
-
-      }
     })
   }
 }

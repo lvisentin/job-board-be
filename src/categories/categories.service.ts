@@ -8,22 +8,22 @@ export class CategoriesService {
   constructor(private prisma: PrismaService) { }
 
   create(createCategoryDto: CreateCategoryDto) {
-    return this.prisma.jobCategory.create({ data: createCategoryDto });
+    return this.prisma.category.create({ data: createCategoryDto });
   }
 
   findAll() {
-    return this.prisma.jobCategory.findMany();
+    return this.prisma.category.findMany();
   }
 
   findOne(id: number) {
-    return this.prisma.jobCategory.findUniqueOrThrow({ where: { id } });
+    return this.prisma.category.findUniqueOrThrow({ where: { id } });
   }
 
   update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return this.prisma.jobCategory.update({ where: { id }, data: updateCategoryDto });
+    return this.prisma.category.update({ where: { id }, data: updateCategoryDto });
   }
 
   remove(id: number) {
-    return this.prisma.jobCategory.delete({ where: { id } });
+    return this.prisma.category.delete({ where: { id } });
   }
 }

@@ -10,9 +10,18 @@ import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
 import { RolesGuard } from './auth/roles/roles.guard';
 import { JobApplicationsModule } from './job-applications/job-applications.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
-  imports: [UserModule, PrismaModule, AuthModule, JobsModule, CategoriesModule, JobApplicationsModule],
+  imports: [
+    UserModule,
+    PrismaModule,
+    AuthModule,
+    JobsModule,
+    CategoriesModule,
+    JobApplicationsModule,
+    ScheduleModule.forRoot()
+  ],
   controllers: [AppController],
   providers: [AppService,
     {

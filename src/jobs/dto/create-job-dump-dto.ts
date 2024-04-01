@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString, MaxLength } from "class-validator";
 
-export class CreateJobDto {
+export class CreateJobDumpDto {
   @MaxLength(255)
   @IsNotEmpty()
   @IsString()
@@ -18,9 +18,6 @@ export class CreateJobDto {
   @IsNotEmpty()
   @IsString()
   applyLink;
-
-  @IsString()
-  customId;
 
   @IsString()
   logo;
