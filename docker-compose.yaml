@@ -1,17 +1,32 @@
 version: '3'
 
 services:
+  db:
+    platform: linux/x86_64
+    image: mysql:8.0.30-debian
+    container_name: job_db
+    networks:
+      - appnetwork
+    ports: 
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: job_board
+  
   app:
     build: .
+    container_name: job_app
+    depends_on:
+      - db
+    networks:
+      - appnetwork
     ports:
       - 3333:3333
     volumes:
       - .:/home/node/app
 
-  db:
-    image: mysql:8.0.30-debian
-    ports: 
-      - 3356:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: job_board
+networks:
+  appnetwork:
+    name:
+      appnetwork_net
+    
