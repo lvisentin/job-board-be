@@ -24,6 +24,6 @@ async function bootstrap() {
     }),
   );
   app.useGlobalFilters(new PrismaNotFoundExceptionFilter());
-  await app.listen(3000);
+  await app.listen(3000, '0.0.0.0');
 }
 bootstrap();
