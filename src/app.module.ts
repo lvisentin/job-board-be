@@ -20,18 +20,19 @@ import { ScheduleModule } from '@nestjs/schedule';
     JobsModule,
     CategoriesModule,
     JobApplicationsModule,
-    ScheduleModule.forRoot()
+    ScheduleModule.forRoot(),
   ],
   controllers: [AppController],
-  providers: [AppService,
+  providers: [
+    AppService,
     {
       provide: APP_GUARD,
-      useClass: AuthGuard
+      useClass: AuthGuard,
     },
     {
       provide: APP_GUARD,
-      useClass: RolesGuard
+      useClass: RolesGuard,
     },
   ],
 })
-export class AppModule { }
+export class AppModule {}

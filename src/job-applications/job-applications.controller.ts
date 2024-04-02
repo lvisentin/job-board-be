@@ -1,15 +1,26 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { JobApplicationsService } from './job-applications.service';
 import { CreateJobApplicationDto } from './dto/create-job-application.dto';
 import { UpdateJobApplicationDto } from './dto/update-job-application.dto';
 
 @Controller('job-applications')
 export class JobApplicationsController {
-  constructor(private readonly jobApplicationsService: JobApplicationsService) { }
+  constructor(
+    private readonly jobApplicationsService: JobApplicationsService,
+  ) {}
 
   @Post()
   create(@Body() createJobApplicationDto: CreateJobApplicationDto) {
-    console.log(createJobApplicationDto)
+    console.log(createJobApplicationDto);
     return this.jobApplicationsService.create(createJobApplicationDto);
   }
 
@@ -24,7 +35,10 @@ export class JobApplicationsController {
   }
 
   @Patch(':id')
-  update(@Param('id', new ParseIntPipe()) id: number, @Body() updateJobApplicationDto: UpdateJobApplicationDto) {
+  update(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Body() updateJobApplicationDto: UpdateJobApplicationDto,
+  ) {
     return this.jobApplicationsService.update(id, updateJobApplicationDto);
   }
 

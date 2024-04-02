@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class JobApplicationsService {
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
   create(createJobApplicationDto: CreateJobApplicationDto) {
     return this.prisma.jobApplication.create({ data: createJobApplicationDto });
@@ -16,30 +16,33 @@ export class JobApplicationsService {
   }
 
   findOne(id: number) {
-    return this.prisma.jobApplication.findUniqueOrThrow({ where: { id } })
+    return this.prisma.jobApplication.findUniqueOrThrow({ where: { id } });
   }
 
   update(id: number, updateJobApplicationDto: UpdateJobApplicationDto) {
-    return this.prisma.jobApplication.update({ where: { id }, data: updateJobApplicationDto })
+    return this.prisma.jobApplication.update({
+      where: { id },
+      data: updateJobApplicationDto,
+    });
   }
 
   remove(id: number) {
-    return this.prisma.jobApplication.delete({ where: { id } })
+    return this.prisma.jobApplication.delete({ where: { id } });
   }
 
   getApplicantsByJob(jobId: number) {
     return this.prisma.jobApplication.findMany({
       where: {
-        jobId
-      }
-    })
+        jobId,
+      },
+    });
   }
 
   getApplicationsByUser(userId: number) {
     return this.prisma.jobApplication.findMany({
       where: {
-        userId
+        userId,
       },
-    })
+    });
   }
 }

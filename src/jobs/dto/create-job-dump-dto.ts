@@ -1,19 +1,19 @@
-import { IsNotEmpty, IsString, MaxLength } from "class-validator";
+import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
 
 export class CreateJobDumpDto {
   @MaxLength(255)
   @IsNotEmpty()
   @IsString()
-  title
+  title;
 
   @IsNotEmpty()
   @IsString()
-  description
+  description;
 
   @MaxLength(255)
   @IsNotEmpty()
   @IsString()
-  company
+  company;
 
   @IsNotEmpty()
   @IsString()
@@ -24,4 +24,3 @@ export class CreateJobDumpDto {
 
   createdById?: number;
 }
-

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, Min } from "class-validator";
+import { IsNotEmpty, IsNumber, Min } from 'class-validator';
 
 export class CreateJobApplicationDto {
   @Min(0)

@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class CategoriesService {
-  constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
   create(createCategoryDto: CreateCategoryDto) {
     return this.prisma.category.create({ data: createCategoryDto });
@@ -20,7 +20,10 @@ export class CategoriesService {
   }
 
   update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return this.prisma.category.update({ where: { id }, data: updateCategoryDto });
+    return this.prisma.category.update({
+      where: { id },
+      data: updateCategoryDto,
+    });
   }
 
   remove(id: number) {
